@@ -23,7 +23,7 @@ router.get('/', function(req, res, next) {
       });
 
       // Start loading page
-      res.render('menu', { title: 'Menu', data: siteData });
+      res.render('menu', { title: 'Menu', tableData: siteData, tableID: 1});
     })
     conn.release()
   })

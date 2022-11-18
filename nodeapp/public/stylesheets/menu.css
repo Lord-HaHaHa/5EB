@@ -1,0 +1,51 @@
+.tableImg{
+    max-width: 100px;
+    max-height: 100px;
+}
+
+table{
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td{
+    height: 130px;
+    font-weight: bold;
+}
+.logo{
+    width: 30%;
+    margin-bottom: 10px;
+
+}
+.transparentBG{
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 10px;
+    padding: 10px
+}
+
+.spacer{
+    height: 5px !important;
+    padding: 0px !important
+}
+
+.numberIn{
+    width: 100px !important;
+}
+
+td, th{
+    padding: 30px;
+    margin: 5px;
+}
+tr{
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center ;
+}
+html, body{
+    height: 100%;
+}
+
+body{
+    padding-top: 10px;
+}
