@@ -2,10 +2,10 @@
 
 1. Install Docker
 2. Open Terminal
-3. Go to the 5EB Folder (PS G:\Programming\5EB>)
+3. Go to the 5EB Folder (exp: PS G:\Programming\5EB>)
 4. Use Command "docker pull mariadb" to get the MariaDB image
 5. Use Command "docker run --mount type=bind,source=$(pwd)/MariaDB,target="/docker-entrypoint-initdb.d" --name mariadb-5EB -p 3306:3306 -e MARIADB_ROOT_PASSWORD=my-secret-pw -e MARIADB_DATABASE=5EB -d mariadb:latest" to Start the SQL Server
-6. Use Command "docker run --name phpmyadmin_5EB -d -e PMA_HOST=192.168.100.47 -p 8081:80 phpmyadmin" to Start phpmyadmin to have root access to the 5EB MariaDB
+6. Use Command "docker run --name phpmyadmin_5EB -d -e PMA_HOST=IPv4_Address -p 8081:80 phpmyadmin" to Start phpmyadmin to have root access to the 5EB MariaDB
 
 <h1>SETUP WEBSERVER:</h1>
 

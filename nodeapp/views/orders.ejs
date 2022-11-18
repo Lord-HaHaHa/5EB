@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <h1>
+        <%= title %>
+    </h1>
+    <table>
+    <tr>
+    <th>OrderID</th>
+    <th>FoodName</th>
+    <th>Price</th>
+    <th>Date</th>
+    <th>TableID</th>
+    <th>State</th>
+    </tr>
+    <% if(data.length> 0){ data.forEach(function(data){ %>
+    <tr>
+        <td>
+        <%=data.orderID %>
+        </td>
+        <td>
+        <%=data.menuName %>
+        </td>
+        <td>
+        <%=data.price %>
+        </td>
+        <td>
+        <%=data.date %>
+        </td>
+        <td>
+        <%=data.tableID %>
+        </td>
+        <td>
+        <% if(data.state == 1){%>
+            Done
+        <%}else{%>
+            Open
+        <%}%>
+        </td>
+    </tr>
+    <% })} else { %>
+        <h2>Es Konnten Keinde Daten Ausgelesen werden</h2>
+    <% } %>
+    </table>
+</body>
+
+</html>

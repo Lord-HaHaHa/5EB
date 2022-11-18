@@ -1,29 +1,51 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1>
+    <%= title %>
+  </h1>
+  <p>Welcome to <%= title %>
+  </p>
+
+  <form action="/thankyou" method="post">
     <table>
       <tr>
         <th>Name</th>
         <th>Image</th>
         <th>Price</th>
       </tr>
-      <% if(data.length!=0){ data.forEach(function(data){ %> 
+      <% if(data.length> 0){ data.forEach(function(data){ %>
         <tr>
-          <td><%=data.name %> </td>
+          <td>
+            <%=data.name %>
+          </td>
           <td><img src="data:image/jpeg;base64,<%- data.img %>" /> </td>
-          <td><%=data.price %></td>
+          <td>
+            <%=data.price %>
+          </td>
+          <td>
+            <% if(data.tag.length> 0){ data.tag.forEach(function(data) { %>
+              <%=data%>
+            <%})} %>
+          </td>
+          <td>
+            <input type="number", value="0", name="<%-data.id%>">
+          </td>
         </tr>
-      <% })} else{ %>
-      <h2>Es Konnten Keinde Daten Ausgelesen werden</h2>
-      <% } %>
+        <% })} else { %>
+          <h2>Es Konnten Keinde Daten Ausgelesen werden</h2>
+        <% } %>
     </table>
+    <button type="submit">Order</button>
+  </form>
+</body>
 
-  </body>
 </html>
