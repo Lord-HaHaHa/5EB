@@ -6,7 +6,6 @@ var db = require('../database');
 router.post('/*', function(req, res, next) {
   request = req.body
   var tableID = request.tableID
-  console.log(request)
   db.pool.getConnection().then(conn => {
     request.id.forEach((element, index) => {
       if(request.Anzahl[index] > 0){
