@@ -7,7 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var menuRouter = require('./routes/menu');
-var overviewRouter = require('./routes/overviewOwner');
+var loginRouter = require('./routes/login');
 var thxfororderRouter = require('./routes/thxfororder');
 var ordersRouter = require('./routes/orders');
 
@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/menu', menuRouter);
-app.use('/overview', overviewRouter);
+app.use('/login', loginRouter);
 app.use('/thankyou', thxfororderRouter);
 app.use('/orders', ordersRouter);
 

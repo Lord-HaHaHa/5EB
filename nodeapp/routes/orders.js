@@ -28,7 +28,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-  request = req.body
+  var request = req.body
   console.log(request)
   var siteData = []
   // SQL Connection and Querys
