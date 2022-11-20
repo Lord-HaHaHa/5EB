@@ -83,13 +83,13 @@
         }
         elementTag = elementTag.sort()
         selectedTags = selectedTags.sort()
-        console.log(`${elementTag} | ${selectedTags.length}`)
+        $tr = $(tr[i])
         if(selectedTags.length > 0 && (elementTag.toString() != selectedTags.toString())){
           console.log("HIDE")
-          tr[i].style.display = "none"
-          //tr[i].style.display = "none";
+          $tr.fadeOut(400)
+          //tr[i].style.display = "none"
         }else {
-          tr[i].style.display = ""
+          $tr.fadeIn(400)
           console.log("Show")
         }
       }       

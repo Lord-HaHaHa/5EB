@@ -43,18 +43,8 @@ tr{
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center ;
-    opacity: 1;
-    transition: opacity 200ms;
-    display: block;
 }
 
-.tr-fade-out-done{
-    display: none;
-}
-
-.tr-fade-out{
-    opacity: 0;
-}
 html, body{
     height: 100%;
 }
