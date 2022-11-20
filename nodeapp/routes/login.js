@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const session = require('express-session');
 var db = require('../database');
 
 /* GET menu listing. */
@@ -13,13 +14,13 @@ router.post('/', function(req, res, next) {
   db.pool.getConnection().then(conn => {
     let sqlcmd = `SELECT * FROM User WHERE password = SHA2('${postreq.password}',0) AND username = '${postreq.username}'; `
     conn.query(sqlcmd).then(rows => {
-      console.log("done query")
       if(rows.length == 1){
-        console.log("Login correct")
+        req.session.loggdin = true
+        req.session.restaurantID = rows[0].restaurantID
+        console.log(req.session)
         res.redirect('orders')
       }
       else{
-        console.log('wrong login')
         res.render('login', { title: 'LogIn to Scan\'n\'Eat' });
       }
     })

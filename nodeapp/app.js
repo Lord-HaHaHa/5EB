@@ -10,6 +10,7 @@ var menuRouter = require('./routes/menu');
 var loginRouter = require('./routes/login');
 var thxfororderRouter = require('./routes/thxfororder');
 var ordersRouter = require('./routes/orders');
+const session = require('express-session');
 
 var app = express();
 
@@ -22,6 +23,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(session({
+  secret: 'secret',
+  resave: false,
+  saveUninitialized: false
+}))
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
