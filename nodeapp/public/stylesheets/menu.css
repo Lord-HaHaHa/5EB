@@ -13,6 +13,7 @@ td{
     height: 130px;
     font-weight: bold;
 }
+
 .logo{
     width: 30%;
     margin-bottom: 10px;
@@ -37,10 +38,22 @@ td, th{
     padding: 30px;
     margin: 5px;
 }
+
 tr{
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center ;
+    opacity: 1;
+    transition: opacity 200ms;
+    display: block;
+}
+
+.tr-fade-out-done{
+    display: none;
+}
+
+.tr-fade-out{
+    opacity: 0;
 }
 html, body{
     height: 100%;
